@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+  <meta name="theme-color" content="#f3efe5">
+  <meta name="description" content="拾页 —— 一个安静、离线的本地背诵笔记本。把要记住的，留在一页一页里。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="拾页">
+  <title>拾页 · 我的背诵笔记本</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-48.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/ShiyeSerif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/tabby-cat-base.png" as="image">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4.8c0-.4.4-.8.8-.8h4.4c.4 0 .8.4.8.8V7M6.5 7l.8 12.1c0 .5.4.9.9.9h7.6c.5 0 .9-.4.9-.9L17.5 7M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 4.2 4.2"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5L19.8 7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.2A8.3 8.3 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.7 12S6 5.8 12 5.8 21.3 12 21.3 12 18 18.2 12 18.2 2.7 12 2.7 12Z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="3"/><path d="M8.5 10V7.7a3.5 3.5 0 0 1 7 0V10"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m4.5 16.8-.7 4 4-.7L19.5 8.4a2.4 2.4 0 0 0-3.4-3.4L4.5 16.8Z"/><path d="m14.5 6.6 3.4 3.4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.2c3.2-.8 5.9-.4 8 1.2v13c-2.1-1.6-4.8-2-8-1.2v-13Z"/><path d="M20 5.2c-3.2-.8-5.9-.4-8 1.2v13c2.1-1.6 4.8-2 8-1.2v-13Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.4" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="4.4" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="4.4" cy="17.5" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5c.6 5.2 2.8 7.4 8 8-5.2.6-7.4 2.8-8 8-.6-5.2-2.8-7.4-8-8 5.2-.6 7.4-2.8 8-8Z"/></symbol>
+    <symbol id="i-switch" viewBox="0 0 24 24"><path d="M4 8h13.5M14 4.5 17.5 8 14 11.5M20 16H6.5M10 12.5 6.5 16l3.5 3.5"/></symbol>
+    <symbol id="i-backspace" viewBox="0 0 24 24"><path d="M9 5h10.2c.9 0 1.6.7 1.6 1.6v10.8c0 .9-.7 1.6-1.6 1.6H9L3 12l6-7Z"/><path d="m12 9 6 6M18 9l-6 6"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-eraser" viewBox="0 0 24 24"><path d="m7 15 6.8-6.8a2.4 2.4 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4L12 20H7.5L4.3 16.8 7 14"/><path d="M9 20h11"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.8 6.5C6.9 7.9 5.2 10 5.2 12.9c0 2.4 1.3 3.9 3.3 3.9 1.8 0 3.1-1.3 3.1-3.1 0-1.7-1.1-2.9-2.7-2.9-.4 0-.7.1-1 .2.3-1.4 1.4-2.5 3-3.3l-1.1-1.2Zm8.4 0c-2.9 1.4-4.6 3.5-4.6 6.4 0 2.4 1.3 3.9 3.3 3.9 1.8 0 3.1-1.3 3.1-3.1 0-1.7-1.1-2.9-2.7-2.9-.4 0-.7.1-1 .2.3-1.4 1.4-2.5 3-3.3l-1.1-1.2Z"/></symbol>
+  </svg>
+
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div id="app">
+    <section id="home-screen" class="screen home-screen" hidden></section>
+    <section id="editor-screen" class="screen editor-screen" hidden></section>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">需要开启 JavaScript 才能使用「拾页」。</div>
+  </noscript>
+
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
